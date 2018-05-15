@@ -1,11 +1,19 @@
+/* 
+ * NOTE : this test file uses a beforeEach instead of a builder like other file
+ * I DO NOT ADVOATE THIS STYLE - It is here for reference and comparison only!
+ */
 describe("ChangeMaker", function () {
 	describe("Calculate_Change_For",function(){
 		describe("Given no change to return", function(){
+			let changeMaker;
+
+			beforeEach(function(){
+				changeMaker = new ChangeMaker([]);
+			});
+
 			it("Should return zero coins", function() {
 				// arrange
-				let changeMaker = new ChangeMakerBuilder()
-												.With_British_Pound()
-												.Build();
+				
 				const tenderedAmount = 1.00;
 				const purchaseAmount = 1.00;
 				// act
@@ -15,6 +23,12 @@ describe("ChangeMaker", function () {
 			});
 		});
 		describe("Given change to return when using Norwegian Krone", function(){
+			let changeMaker;
+
+			beforeEach(function(){
+				changeMaker = new ChangeMaker([1,5,10,20]);
+			});
+
 			describe("When change is only made up of one coin", function(){
 				[
 					{tender:2.00, purchase:1.80, change:20},
@@ -25,9 +39,6 @@ describe("ChangeMaker", function () {
 				.forEach(interaction=>{
 					it("Should return one "+interaction.change+" cent coin", function() {
 						// arrange
-						let changeMaker = new ChangeMakerBuilder()
-														.With_Norwegain_Krone()
-														.Build();
 						const tenderedAmount = interaction.tender;
 						const purchaseAmount = interaction.purchase;
 						// act
@@ -41,9 +52,6 @@ describe("ChangeMaker", function () {
 			describe("When change is only made up of all coins", function(){
 				it("Should return one of each coin", function() {
 					// arrange
-					let changeMaker = new ChangeMakerBuilder()
-													.With_Norwegain_Krone()
-													.Build();
 					const tenderedAmount = 3.00;
 					const purchaseAmount = 2.64;
 					// act
@@ -58,6 +66,11 @@ describe("ChangeMaker", function () {
 			});
 		});
 		describe("Given change to return when using US Dollar", function(){
+			let changeMaker;
+
+			beforeEach(function(){
+				changeMaker = new ChangeMaker([1,5,10,25]);
+			});
 			describe("When change is only made up of one coin", function(){
 				[
 					{tender:3.00, purchase:2.75, change:25},
@@ -68,9 +81,6 @@ describe("ChangeMaker", function () {
 				.forEach(interaction=>{
 					it("Should return one "+interaction.change+" cent coin", function() {
 						// arrange
-						let changeMaker = new ChangeMakerBuilder()
-														.With_US_Dollar()
-														.Build();
 						const tenderedAmount = interaction.tender;
 						const purchaseAmount = interaction.purchase;
 						// act
@@ -84,9 +94,6 @@ describe("ChangeMaker", function () {
 			describe("When change is only made up of all coins", function(){
 				it("Should return one of each coin", function() {
 					// arrange
-					let changeMaker = new ChangeMakerBuilder()
-													.With_US_Dollar()
-													.Build();
 					const tenderedAmount = 2.00;
 					const purchaseAmount = 1.59;
 					// act
@@ -101,6 +108,11 @@ describe("ChangeMaker", function () {
 			});
 		});
 		describe("Given change to return when using British Pound", function(){
+			let changeMaker;
+
+			beforeEach(function(){
+				changeMaker = new ChangeMaker([1,2,5,10,20,50]);
+			});
 			describe("When change is only made up of one coin", function(){
 				[
 					{tender:6.00, purchase:5.50, change:50},
@@ -113,9 +125,6 @@ describe("ChangeMaker", function () {
 				.forEach(interaction=>{
 					it("Should return one "+interaction.change+" cent coin", function() {
 						// arrange
-						let changeMaker = new ChangeMakerBuilder()
-														.With_British_Pound()
-														.Build();
 						const tenderedAmount = interaction.tender;
 						const purchaseAmount = interaction.purchase;
 						// act
@@ -129,9 +138,6 @@ describe("ChangeMaker", function () {
 			describe("When change is only made up of all coins", function(){
 				it("Should return one of each coin", function() {
 					// arrange
-					let changeMaker = new ChangeMakerBuilder()
-													.With_British_Pound()
-													.Build();
 					const tenderedAmount = 3.00;
 					const purchaseAmount = 2.12;
 					// act
