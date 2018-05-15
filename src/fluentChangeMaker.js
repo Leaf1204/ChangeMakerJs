@@ -22,7 +22,7 @@ let FluentChangeMaker = function(coinDenominations){
               let changeToBeGivenInCents = (_tenderedAmount - _purchaseAmount).toFixed(2)*100;
               
               _coinDenominations.forEach(coin => {
-                while(coin <= changeToBeGivenInCents){
+              while(coin <= changeToBeGivenInCents){
                   result.push(coin);
                   changeToBeGivenInCents -= coin; 
                 }

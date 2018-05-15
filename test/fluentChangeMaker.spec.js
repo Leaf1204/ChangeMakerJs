@@ -1,6 +1,6 @@
-describe("ChangeMaker", function () {
-	describe("Calculate_Change_For",function(){
-		describe("Given no change to return", function(){
+describe("FluentChangeMaker", function () {
+	describe("Calculate_Change",function(){
+		describe("When tendered amount equal to purchase amount", function(){
 			it("Should return zero coins", function() {
 				// arrange
 				let changeMaker = new ChangeMakerBuilder()
@@ -17,8 +17,8 @@ describe("ChangeMaker", function () {
 				expect(actual).toEqual([]);
 			});
 		});
-		describe("Given change to return when using Norwegian Krone", function(){
-			describe("When change is only made up of one coin", function(){
+		describe("When using Norwegian Krone", function(){
+			describe("Given change is only made up of one coin", function(){
 				[
 					{tender:2.00, purchase:1.80, change:[20]},
 					{tender:2.50, purchase:2.40, change:[10]},
@@ -41,7 +41,7 @@ describe("ChangeMaker", function () {
 					});
 				});
 			});
-			describe("When change is made up of all coins", function(){
+			describe("Given change is made up of all coins", function(){
 				it("Should return one of each coin", function() {
 					// arrange
 					let changeMaker = new ChangeMakerBuilder()
@@ -59,8 +59,8 @@ describe("ChangeMaker", function () {
 				});
 			});
 		});
-		describe("Given change to return when using US Dollar", function(){
-			describe("When change is only made up of one coin", function(){
+		describe("When using US Dollar", function(){
+			describe("Given change is only made up of one coin", function(){
 				[
 					{tender:3.00, purchase:2.75, change:[25]},
 					{tender:1.50, purchase:1.40, change:[10]},
@@ -85,7 +85,7 @@ describe("ChangeMaker", function () {
 					});
 				});
 			});
-			describe("When change is made up of all coins", function(){
+			describe("Given change is made up of all coins", function(){
 				it("Should return one of each coin", function() {
 					// arrange
 					let changeMaker = new ChangeMakerBuilder()
@@ -103,8 +103,8 @@ describe("ChangeMaker", function () {
 				});
 			});
 		});
-		describe("Given change to return when using British Pound", function(){
-			describe("When change is made up of one coin", function(){
+		describe("When using British Pound", function(){
+			describe("Given change is made up of one coin", function(){
 				[
 					{tender:6.00, purchase:5.50, change:[50]},
 					{tender:1.80, purchase:1.60, change:[20]},
@@ -131,7 +131,7 @@ describe("ChangeMaker", function () {
 					});
 				});
 			});
-			describe("When change is only made up of all coins", function(){
+			describe("Given change is only made up of all coins", function(){
 				it("Should return one of each coin", function() {
 					// arrange
 					let changeMaker = new ChangeMakerBuilder()

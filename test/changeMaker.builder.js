@@ -5,8 +5,8 @@
  * This is because I believe each test must read like a short story, no jumping around to find 
  * hidden elements of the story. 
  * 
- * Who would read book where the pages where not sequential and required you 
- * to skip around to build context of the story?! No one, so why do it with code!
+ * Who would read a book where the pages where not sequential and required you 
+ * to skip around to understand the story?! No one so why do it with code!
  */
 function ChangeMakerBuilder(){
 	let self = this;
