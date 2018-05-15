@@ -6,7 +6,6 @@ describe("ChangeMaker", function () {
 	describe("Calculate_Change_For",function(){
 		describe("Given no change to return", function(){
 			let changeMaker;
-
 			beforeEach(function(){
 				changeMaker = new ChangeMaker([]);
 			});
@@ -19,12 +18,11 @@ describe("ChangeMaker", function () {
 				// act
 				let actual = changeMaker.Calculate_Change_For(tenderedAmount, purchaseAmount);
 				// assert
-				expect(actual.length).toBe(0);
+				expect(actual).toEqual([]);
 			});
 		});
 		describe("Given change to return when using Norwegian Krone", function(){
 			let changeMaker;
-
 			beforeEach(function(){
 				changeMaker = new ChangeMaker([1,5,10,20]);
 			});
@@ -44,8 +42,7 @@ describe("ChangeMaker", function () {
 						// act
 						let actual = changeMaker.Calculate_Change_For(tenderedAmount, purchaseAmount);
 						// assert
-						expect(actual.length).toBe(1);
-						expect(actual[0]).toBe(interaction.change);
+						expect(actual).toEqual([interaction.change]);
 					});
 				});
 			});
@@ -57,11 +54,7 @@ describe("ChangeMaker", function () {
 					// act
 					let actual = changeMaker.Calculate_Change_For(tenderedAmount, purchaseAmount);
 					// assert
-					expect(actual.length).toBe(4);
-					expect(actual[0]).toBe(20);
-					expect(actual[1]).toBe(10);
-					expect(actual[2]).toBe(5);
-					expect(actual[3]).toBe(1);
+					expect(actual).toEqual([20,10,5,1]);
 				});
 			});
 		});
@@ -86,8 +79,7 @@ describe("ChangeMaker", function () {
 						// act
 						let actual = changeMaker.Calculate_Change_For(tenderedAmount, purchaseAmount);
 						// assert
-						expect(actual.length).toBe(1);
-						expect(actual[0]).toBe(interaction.change);
+						expect(actual).toEqual([interaction.change]);
 					});
 				});
 			});
@@ -99,11 +91,7 @@ describe("ChangeMaker", function () {
 					// act
 					let actual = changeMaker.Calculate_Change_For(tenderedAmount, purchaseAmount);
 					// assert
-					expect(actual.length).toBe(4);
-					expect(actual[0]).toBe(25);
-					expect(actual[1]).toBe(10);
-					expect(actual[2]).toBe(5);
-					expect(actual[3]).toBe(1);
+					expect(actual).toEqual([25,10,5,1]);
 				});
 			});
 		});
@@ -130,8 +118,7 @@ describe("ChangeMaker", function () {
 						// act
 						let actual = changeMaker.Calculate_Change_For(tenderedAmount, purchaseAmount);
 						// assert
-						expect(actual.length).toBe(1);
-						expect(actual[0]).toBe(interaction.change);
+						expect(actual).toEqual([interaction.change]);
 					});
 				});
 			});
@@ -143,13 +130,7 @@ describe("ChangeMaker", function () {
 					// act
 					let actual = changeMaker.Calculate_Change_For(tenderedAmount, purchaseAmount);
 					// assert
-					expect(actual.length).toBe(6);
-					expect(actual[0]).toBe(50);
-					expect(actual[1]).toBe(20);
-					expect(actual[2]).toBe(10);
-					expect(actual[3]).toBe(5);
-					expect(actual[4]).toBe(2);
-					expect(actual[5]).toBe(1);
+					expect(actual).toEqual([50,20,10,5,2,1]);
 				});
 			});
 		});
