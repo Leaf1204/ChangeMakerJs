@@ -1,7 +1,7 @@
 let ChangeMaker = function(coinDenominations){
 
-	let _coinDenominations = coinDenominations.sort(function(a,b){return b>a});
-
+  let _coinDenominations = coinDenominations.sort(function(a,b){return b>a});
+  
 	return {
 		Calculate_Change_For : function(tenderedAmount, purchaseAmount){
       let result = [];

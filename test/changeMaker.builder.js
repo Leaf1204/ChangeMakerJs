@@ -30,4 +30,8 @@ function ChangeMakerBuilder(){
 	self.Build = function(){
 		return new ChangeMaker(self.coinDenominations);
 	}
+
+	self.Build_Fluent = function(){
+		return new FluentChangeMaker(self.coinDenominations);
+	}
 }

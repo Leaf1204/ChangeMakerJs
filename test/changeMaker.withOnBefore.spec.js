@@ -1,5 +1,5 @@
 /* 
- * NOTE : this test file uses a beforeEach instead of a builder like other file
+ * NOTE : this test file uses a beforeEach instead of a builder like other file changeMaker.withBuilder.spec
  * I DO NOT ADVOATE THIS STYLE - It is here for reference and comparison only!
  */
 describe("ChangeMaker", function () {

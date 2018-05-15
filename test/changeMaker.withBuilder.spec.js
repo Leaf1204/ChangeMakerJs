@@ -8,7 +8,7 @@ describe("ChangeMaker", function () {
 												.Build();
 				const tenderedAmount = 1.00;
 				const purchaseAmount = 1.00;
-				// act
+				// act	  
 				let actual = changeMaker.Calculate_Change_For(tenderedAmount, purchaseAmount);
 				// assert
 				expect(actual).toEqual([]);
