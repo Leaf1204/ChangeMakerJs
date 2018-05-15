@@ -29,10 +29,10 @@ describe("ChangeMaker", function () {
 
 			describe("When change is only made up of one coin", function(){
 				[
-					{tender:2.00, purchase:1.80, change:20},
-					{tender:2.50, purchase:2.40, change:10},
-					{tender:3.00, purchase:2.95, change:5},
-					{tender:1.00, purchase:0.99, change:1}
+					{tender:2.00, purchase:1.80, change:[20]},
+					{tender:2.50, purchase:2.40, change:[10]},
+					{tender:3.00, purchase:2.95, change:[5]},
+					{tender:1.00, purchase:0.99, change:[1]}
 				]
 				.forEach(interaction=>{
 					it("Should return one "+interaction.change+" cent coin", function() {
@@ -42,7 +42,7 @@ describe("ChangeMaker", function () {
 						// act
 						let actual = changeMaker.Calculate_Change_For(tenderedAmount, purchaseAmount);
 						// assert
-						expect(actual).toEqual([interaction.change]);
+						expect(actual).toEqual(interaction.change);
 					});
 				});
 			});
@@ -66,10 +66,10 @@ describe("ChangeMaker", function () {
 			});
 			describe("When change is only made up of one coin", function(){
 				[
-					{tender:3.00, purchase:2.75, change:25},
-					{tender:1.50, purchase:1.40, change:10},
-					{tender:1.00, purchase:0.95, change:5},
-					{tender:2.00, purchase:1.99, change:1}
+					{tender:3.00, purchase:2.75, change:[25]},
+					{tender:1.50, purchase:1.40, change:[10]},
+					{tender:1.00, purchase:0.95, change:[5]},
+					{tender:2.00, purchase:1.99, change:[1]}
 				]
 				.forEach(interaction=>{
 					it("Should return one "+interaction.change+" cent coin", function() {
@@ -79,7 +79,7 @@ describe("ChangeMaker", function () {
 						// act
 						let actual = changeMaker.Calculate_Change_For(tenderedAmount, purchaseAmount);
 						// assert
-						expect(actual).toEqual([interaction.change]);
+						expect(actual).toEqual(interaction.change);
 					});
 				});
 			});
@@ -103,12 +103,12 @@ describe("ChangeMaker", function () {
 			});
 			describe("When change is only made up of one coin", function(){
 				[
-					{tender:6.00, purchase:5.50, change:50},
-					{tender:1.80, purchase:1.60, change:20},
-					{tender:0.50, purchase:0.40, change:10},
-					{tender:2.00, purchase:1.95, change:5},
-					{tender:5.00, purchase:4.98, change:2},
-					{tender:8.00, purchase:7.99, change:1}
+					{tender:6.00, purchase:5.50, change:[50]},
+					{tender:1.80, purchase:1.60, change:[20]},
+					{tender:0.50, purchase:0.40, change:[10]},
+					{tender:2.00, purchase:1.95, change:[5]},
+					{tender:5.00, purchase:4.98, change:[2]},
+					{tender:8.00, purchase:7.99, change:[1]}
 				]
 				.forEach(interaction=>{
 					it("Should return one "+interaction.change+" cent coin", function() {
@@ -118,7 +118,7 @@ describe("ChangeMaker", function () {
 						// act
 						let actual = changeMaker.Calculate_Change_For(tenderedAmount, purchaseAmount);
 						// assert
-						expect(actual).toEqual([interaction.change]);
+						expect(actual).toEqual(interaction.change);
 					});
 				});
 			});
