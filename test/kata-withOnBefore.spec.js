@@ -12,7 +12,6 @@ describe("ChangeMaker", function () {
 
 			it("Should return zero coins", function() {
 				// arrange
-				
 				const tenderedAmount = 1.00;
 				const purchaseAmount = 1.00;
 				// act
@@ -46,7 +45,7 @@ describe("ChangeMaker", function () {
 					});
 				});
 			});
-			describe("When change is only made up of all coins", function(){
+			describe("When change is made up of all coins", function(){
 				it("Should return one of each coin", function() {
 					// arrange
 					const tenderedAmount = 3.00;
@@ -83,7 +82,7 @@ describe("ChangeMaker", function () {
 					});
 				});
 			});
-			describe("When change is only made up of all coins", function(){
+			describe("When change is made up of all coins", function(){
 				it("Should return one of each coin", function() {
 					// arrange
 					const tenderedAmount = 2.00;
@@ -122,7 +121,7 @@ describe("ChangeMaker", function () {
 					});
 				});
 			});
-			describe("When change is only made up of all coins", function(){
+			describe("When change is made up of all coins", function(){
 				it("Should return one of each coin", function() {
 					// arrange
 					const tenderedAmount = 3.00;
